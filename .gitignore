@@ -1,2 +1,3 @@
 /.idea
-/libs/LuaJIT
+/libs/LuaJIT/**/*
+!/libs/LuaJIT/.gitkeep
