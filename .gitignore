@@ -1,3 +1,4 @@
 /.idea
 /libs/LuaJIT/**/*
 !/libs/LuaJIT/.gitkeep
+/cmake-build-*
