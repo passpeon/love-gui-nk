@@ -8,8 +8,8 @@ ADD_LIBRARY(
         "nuklear"
         MODULE
         libs/nuklear/nuklear.h
-        src/love_gui_nk.c
-)
+        src/main.c
+        src/debug.c src/debug.h src/util.c src/util.h)
 
 TARGET_INCLUDE_DIRECTORIES(
         "nuklear"
