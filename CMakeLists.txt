@@ -9,7 +9,10 @@ ADD_LIBRARY(
         MODULE
         libs/nuklear/nuklear.h
         src/main.c
-        src/debug.c src/debug.h src/util.c src/util.h)
+        src/debug.c src/debug.h
+        src/util.c src/util.h
+        src/draw.c src/draw.h
+)
 
 TARGET_INCLUDE_DIRECTORIES(
         "nuklear"

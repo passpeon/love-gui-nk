@@ -16,12 +16,12 @@
 
 #include "debug.h"
 #include "util.h"
+#include "draw.h"
 
 // Internal
 lua_State *L;
-static struct nk_context context;
+struct nk_context context;
 struct nk_user_font *default_font;
-
 
 /**
  * Pushes the default font onto the lua stack.
@@ -29,6 +29,8 @@ struct nk_user_font *default_font;
  * @return Number of elements placed on stack
  */
 static int lgnk_get_default_font() {
+    // ToDo: Remove fields from stack? Keep only font?
+
     lua_getglobal(L, "love");
     lua_getfield(L, -1, "graphics");
     lua_getfield(L, -1, "getFont");
@@ -85,6 +87,9 @@ static int lgnk_init(lua_State *luaState) {
     // Init
     nk_init_default(&context, default_font);
 
+    nk_begin_titled(&context, "Test", "Test", nk_rect(10, 10, 200, 200), NK_WINDOW_BORDER);
+    nk_end(&context);
+
     return 0;
 }
 
@@ -106,6 +111,7 @@ LUALIB_API int luaopen_nuklear(lua_State *L) {
 
     REGISTER_LUA_FUNCTION("init", lgnk_init);
     REGISTER_LUA_FUNCTION("shutdown", lgnk_shutdown);
+    REGISTER_LUA_FUNCTION("draw", lgnk_draw);
 
     return 1;
 }

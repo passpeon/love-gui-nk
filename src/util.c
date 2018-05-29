@@ -39,5 +39,6 @@ void lgnk_assert(bool pass, const char *msg) {
 void *lgnk_malloc(size_t size) {
     void *mem = malloc(size);
     lgnk_assert(mem != NULL, "Out of memory in %s");
+
     return mem;
 }

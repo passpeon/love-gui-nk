@@ -1,6 +1,4 @@
-//
-// Created by Konstantin Köppe on 26/04/2018.
-//
+#include <stdbool.h>
 
 #ifndef LOVE_GUI_NK_UTIL_H
 #define LOVE_GUI_NK_UTIL_H
